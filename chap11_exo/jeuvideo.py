@@ -2,6 +2,13 @@ class JeuVideo:
     device = "screen"
 
     def __init__(self, name, dim, price, min_age):
+        """
+        constructeur
+        :param name:
+        :param dim:
+        :param price:
+        :param min_age:
+        """
         self.name = name
         self.dim  = dim
         self.price  = price

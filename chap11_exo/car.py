@@ -42,6 +42,7 @@ if __name__ == "__main__":
     voiture_A.decrement()
     voiture_A.decrement()
     voiture_A.decrement()
+    voiture_A.speed = 20
     voiture_A.decrement()
     voiture_A.decrement()
     voiture_A.decrement()
