@@ -1,0 +1,331 @@
+[
+    {
+        "name": "Ballon de football",
+        "price": 25.99,
+        "qty": 120,
+        "category": "Football",
+        "reorder_threshold": 20
+    },
+    {
+        "name": "Raquette de tennis",
+        "price": 89.99,
+        "qty": 75,
+        "category": "Tennis",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Gants de boxe",
+        "price": 34.99,
+        "qty": 60,
+        "category": "Boxe",
+        "reorder_threshold": 15
+    },
+    {
+        "name": "Vélo de montagne",
+        "price": 499.99,
+        "qty": 15,
+        "category": "Cyclisme",
+        "reorder_threshold": 5
+    },
+    {
+        "name": "Casque de vélo",
+        "price": 45.5,
+        "qty": 50,
+        "category": "Cyclisme",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Maillot de bain",
+        "price": 29.99,
+        "qty": 80,
+        "category": "Natation",
+        "reorder_threshold": 20
+    },
+    {
+        "name": "Lunettes de natation",
+        "price": 19.99,
+        "qty": 150,
+        "category": "Natation",
+        "reorder_threshold": 30
+    },
+    {
+        "name": "Tapis de yoga",
+        "price": 25.0,
+        "qty": 100,
+        "category": "Fitness",
+        "reorder_threshold": 25
+    },
+    {
+        "name": "Haltères 5kg",
+        "price": 35.99,
+        "qty": 45,
+        "category": "Fitness",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Corde à sauter",
+        "price": 12.99,
+        "qty": 200,
+        "category": "Fitness",
+        "reorder_threshold": 40
+    },
+    {
+        "name": "Chaussures de running",
+        "price": 85.0,
+        "qty": 60,
+        "category": "Running",
+        "reorder_threshold": 15
+    },
+    {
+        "name": "T-shirt de sport",
+        "price": 20.0,
+        "qty": 140,
+        "category": "Vêtements",
+        "reorder_threshold": 30
+    },
+    {
+        "name": "Bouteille d'eau",
+        "price": 10.99,
+        "qty": 300,
+        "category": "Accessoires",
+        "reorder_threshold": 50
+    },
+    {
+        "name": "Sac de sport",
+        "price": 40.0,
+        "qty": 70,
+        "category": "Accessoires",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Protections de genou",
+        "price": 22.99,
+        "qty": 90,
+        "category": "Fitness",
+        "reorder_threshold": 20
+    },
+    {
+        "name": "Filet de badminton",
+        "price": 55.0,
+        "qty": 30,
+        "category": "Badminton",
+        "reorder_threshold": 5
+    },
+    {
+        "name": "Chaussures de football",
+        "price": 110.0,
+        "qty": 40,
+        "category": "Football",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Pantalon de jogging",
+        "price": 35.0,
+        "qty": 120,
+        "category": "Vêtements",
+        "reorder_threshold": 25
+    },
+    {
+        "name": "Gants de golf",
+        "price": 15.5,
+        "qty": 80,
+        "category": "Golf",
+        "reorder_threshold": 15
+    },
+    {
+        "name": "Club de golf",
+        "price": 150.0,
+        "qty": 30,
+        "category": "Golf",
+        "reorder_threshold": 5
+    },
+    {
+        "name": "Sifflet",
+        "price": 5.99,
+        "qty": 250,
+        "category": "Accessoires",
+        "reorder_threshold": 60
+    },
+    {
+        "name": "Chasuble d'entraînement",
+        "price": 12.5,
+        "qty": 180,
+        "category": "Football",
+        "reorder_threshold": 35
+    },
+    {
+        "name": "Ballon de basket",
+        "price": 30.99,
+        "qty": 100,
+        "category": "Basketball",
+        "reorder_threshold": 20
+    },
+    {
+        "name": "Short de basket",
+        "price": 28.99,
+        "qty": 70,
+        "category": "Basketball",
+        "reorder_threshold": 15
+    },
+    {
+        "name": "Protège-dents",
+        "price": 8.99,
+        "qty": 220,
+        "category": "Rugby",
+        "reorder_threshold": 40
+    },
+    {
+        "name": "Chaussures de rugby",
+        "price": 120.0,
+        "qty": 35,
+        "category": "Rugby",
+        "reorder_threshold": 8
+    },
+    {
+        "name": "Veste de sport",
+        "price": 65.0,
+        "qty": 55,
+        "category": "Vêtements",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Ballon de volley",
+        "price": 22.99,
+        "qty": 90,
+        "category": "Volley",
+        "reorder_threshold": 15
+    },
+    {
+        "name": "Filet de volley",
+        "price": 49.99,
+        "qty": 25,
+        "category": "Volley",
+        "reorder_threshold": 5
+    },
+    {
+        "name": "Raquette de badminton",
+        "price": 18.99,
+        "qty": 60,
+        "category": "Badminton",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Balle de golf",
+        "price": 2.5,
+        "qty": 500,
+        "category": "Golf",
+        "reorder_threshold": 100
+    },
+    {
+        "name": "Haltères 10kg",
+        "price": 60.0,
+        "qty": 30,
+        "category": "Fitness",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Skateboard",
+        "price": 75.0,
+        "qty": 40,
+        "category": "Skateboard",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Casque de skate",
+        "price": 35.0,
+        "qty": 70,
+        "category": "Skateboard",
+        "reorder_threshold": 15
+    },
+    {
+        "name": "Bande de résistance",
+        "price": 9.99,
+        "qty": 180,
+        "category": "Fitness",
+        "reorder_threshold": 40
+    },
+    {
+        "name": "Ballon de rugby",
+        "price": 28.99,
+        "qty": 75,
+        "category": "Rugby",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Maillot de rugby",
+        "price": 50.0,
+        "qty": 45,
+        "category": "Rugby",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Chaussures de tennis",
+        "price": 90.0,
+        "qty": 50,
+        "category": "Tennis",
+        "reorder_threshold": 10
+    },
+    {
+        "name": "Gilet lesté",
+        "price": 45.0,
+        "qty": 20,
+        "category": "Fitness",
+        "reorder_threshold": 5
+    },
+    {
+        "name": "Set de tennis de table",
+        "price": 25.0,
+        "qty": 80,
+        "category": "Tennis de table",
+        "reorder_threshold": 20
+    },
+    {
+        "name": "Raquette de tennis de table",
+        "price": 12.0,
+        "qty": 150,
+        "category": "Tennis de table",
+        "reorder_threshold": 30
+    },
+    {
+        "name": "Filet de tennis",
+        "price": 75.0,
+        "qty": 10,
+        "category": "Tennis",
+        "reorder_threshold": 2
+    },
+    {
+        "name": "Tapis de course",
+        "price": 899.99,
+        "qty": 8,
+        "category": "Fitness",
+        "reorder_threshold": 2
+    },
+    {
+        "name": "Vélo d'appartement",
+        "price": 350.0,
+        "qty": 12,
+        "category": "Fitness",
+        "reorder_threshold": 3
+    },
+    {
+        "name": "Ballon de handball",
+        "price": 26.99,
+        "qty": 85,
+        "category": "Handball",
+        "reorder_threshold": 15
+    },
+    {
+        "name": "Short de running",
+        "price": 25.0,
+        "qty": 100,
+        "category": "Running",
+        "reorder_threshold": 20
+    },
+    {
+        "name": "T-shirt de running",
+        "price": 30.0,
+        "qty": 120,
+        "category": "Running",
+        "reorder_threshold": 25
+    }
+]
