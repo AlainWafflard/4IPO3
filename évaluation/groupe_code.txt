@@ -1,3 +1,6 @@
+En plus des consignes générales, il y a des consignes particulières à chaque groupe. Pour savoir quelles consignes sont attribuées à votre groupe, référez-vous aux codes donnés ci-dessous.
+Explication : Par exemple, le groupe POOA a reçu le code 269C.  Ceci veut dire que ce groupe doit répondre aux consignes particulières 2, 6, 9 et C, soit quatre questions. 
+
 Groupe	code
 POOA	269C
 POOB	347B
