@@ -38,7 +38,7 @@ class Date:
         if self.mois > other.mois : return False
         if self.jour < other.jour : return True
         if self.jour >= other.jour : return False
-
+ 
     def __eq__(self, other):
         return ( self.annee == other.annee and self.mois == other.mois and self.jour == other.jour )
 
