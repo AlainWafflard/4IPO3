@@ -20,11 +20,16 @@ class Bank:
         self.account_d[name] = Account(name)
         self.account_d[name].deposer(10)
 
+    def deposer(self, name, amount ):
+        self.account_d[name].deposer(amount)
+
 
 if __name__ == "__main__":
     b = Bank("Belfius")
     b.ajouter_compte("Kim")
     b.ajouter_compte("Sandra")
+    b.deposer( "Kim", 100 )
     print(b) # banque de nom: Belfius, compte de Kim, compte de Sandra
+    # c = b
     b = None # compte de Kim détruit, compte de Sandra détruit, banque détruite
     print("eop")
