@@ -1,0 +1,22 @@
+<h1>ISFCE, Cours de "Programmation Orientée Objet" (4IPO3)</h1>
+
+<h2>Note sur le projet "magasin de sport"</h2>
+
+<p>
+<a href="https://docs.google.com/document/d/19tC5Gl6xrAL4ETZqtZvEZyf3Yl41oVdl4fLzx1Rtmpg/edit?usp=sharing" target="_blank">
+Ceci est le lien vers les consignes générales (gDoc) 
+</a>
+</p>
+
+<p>
+<a href="https://docs.google.com/document/d/13IC2pJ2FqyQJ833j1y0Ri2fKEOyNNp0KV6lDLSWfnFo/edit?usp=sharing" target="_blank">
+Ceci est le lien vers les consignes particulières propres à chaque groupe (gDoc) 
+</a>
+</p>
+
+Remarques : 
+<ul>
+<li>Les consignes propres au chapitre 13 (POO avancée) sont maintenant publiées.</li>
+<li>Les consignes relatives aux deux chapitres 11 et 13 
+sont rassemblées dans les mêmes gDoc mais en tant que chapitres séparés. Allez donc bien voir en fin de document.</li>
+</ul>
