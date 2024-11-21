@@ -100,7 +100,7 @@ if __name__ == "__main__":
     mag_o = Magasin()
 
     # Charger les produits depuis un fichier JSON
-    mag_o.load_product_f('S1_Q31_produit_in.json')
+    mag_o.load_product_f('S1_Q31_product_in_1.json')
 
     # Charger les commandes client
     mag_o.load_order_f('S1_Q31_commande.json')
