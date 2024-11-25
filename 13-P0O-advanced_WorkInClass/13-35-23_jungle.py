@@ -1,6 +1,8 @@
 class Predator:
-    speed = 10
+    speed = 5
+    run_speed = 15
     name = "predator"
+    threshold_distance = 50
 
     def __init__(self, position):
         self.position = position
@@ -8,9 +10,12 @@ class Predator:
         self.prey = None
         self.water = None
 
+    def __str__(self):
+        return f"{self.name} : {self.position}"
+
     @property
     def prey_caught(self):
-        return abs(self.position - self.prey.position) < 2
+        return abs(self.position - self.prey.position) <= 10
 
     def set_prey(self, prey):
         self.prey = prey
@@ -20,25 +25,33 @@ class Predator:
 
     def move(self):
         # le lion bouge ...
-        if abs( self.position - self.water.position ) < 2 :
-            pass
+        if abs(self.position - self.prey.position) <= self.threshold_distance:
+            if self.position < self.prey.position:
+                self.position += self.run_speed
+            else:
+                self.position -= self.run_speed
+        elif abs( self.position - self.water.position ) < self.threshold_distance :
+            pass # boire
         elif self.position < self.water.position :
-            self.position += self.speed
+            self.position += self.speed # aller vers l'eau
         elif self.position > self.water.position :
-            self.position -= self.speed
-
-        print(f"{self.name} : {self.position}")
+            self.position -= self.speed # aller vers l'eau
 
 
 class Prey:
     speed = 5
+    run_speed = 10
     name = "prey"
+    threshold_distance = 25
 
     def __init__(self, position):
         self.position = position
         # self.prey_caught = False
         self.predator = None
         self.water = None
+
+    def __str__(self):
+        return f"{self.name} : {self.position}"
 
     def set_predator(self, predator):
         self.predator = predator
@@ -47,19 +60,17 @@ class Prey:
         self.water = water
 
     def move(self):
-        if abs(self.position - self.predator.position) <= 20:
+        if abs(self.position - self.predator.position) <= self.threshold_distance:
             if self.position < self.predator.position:
-                self.position -= self.speed
+                self.position -= self.run_speed
             else:
-                self.position += self.speed
-        elif abs(self.position - self.water.position) < 2:
+                self.position += self.run_speed
+        elif abs(self.position - self.water.position) < 5:
             pass    # boire
         elif self.position < self.water.position:
             self.position += self.speed # aller vers l'eau
         elif self.position > self.water.position:
             self.position -= self.speed # aller vers l'eau
-
-        print(f"{self.name} : {self.position}")
 
 
 class Water:
@@ -78,6 +89,7 @@ if __name__ == "__main__":
     while True:
         lion.move()
         buffle.move()
+        print( lion, buffle )
         if lion.prey_caught:
             print("Bon appétit !")
             break
