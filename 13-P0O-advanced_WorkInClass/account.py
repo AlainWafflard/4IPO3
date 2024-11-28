@@ -1,6 +1,6 @@
 class Account:
 
-    __taux = 0.01
+    _taux = 0.01
 
     def __init__(self, titulaire):
         self.__titulaire = titulaire
@@ -10,7 +10,7 @@ class Account:
         print(f"Account de {self.titulaire} détruit")
 
     def __str__(self):
-        return f"Account de {self.titulaire} : solde {self.solde}; taux {self.__taux}"
+        return f"Account de {self.titulaire} : solde {self.solde}; taux {self._taux}"
 
     @classmethod
     def taux(cls):
@@ -41,21 +41,31 @@ class Account:
             print("solde insuffisant")
 
 
+class CompteEpargne(Account):
+    _taux = 0.02
+
+
 if __name__ == "__main__":
-    Account.set_taux(0.05)
     a = Account("Albert")
-    b = Account("Bernard")
     print(a)
+
+    b = CompteEpargne("Bill")
     print(b)
-    Account.set_taux(0.03)
-    print(a)
-    print(b)
-    # a.set_taux(0.02)
-    print(a)
-    print(b)
-    Account.set_taux(0.04)
-    print(a)
-    print(b)
+
+    # Account.set_taux(0.05)
+    # a = Account("Albert")
+    # b = Account("Bernard")
+    # print(a)
+    # print(b)
+    # Account.set_taux(0.03)
+    # print(a)
+    # print(b)
+    # # a.set_taux(0.02)
+    # print(a)
+    # print(b)
+    # Account.set_taux(0.04)
+    # print(a)
+    # print(b)
 
     # a.solde = 1000
     # a.__solde = 1000
