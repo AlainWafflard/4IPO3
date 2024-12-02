@@ -3,8 +3,8 @@ class Account:
     _taux = 0.01
 
     def __init__(self, titulaire):
-        self.__titulaire = titulaire
-        self.__solde = 0
+        self._titulaire = titulaire
+        self._solde = 0
 
     def __del__(self):
         print(f"Account de {self.titulaire} détruit")
@@ -14,67 +14,85 @@ class Account:
 
     @classmethod
     def taux(cls):
-        return cls.__taux
-
-    @classmethod
-    def set_taux(cls, val):
-        cls.__taux = val
+        return cls._taux
 
     @property
     def titulaire(self):
-        return self.__titulaire
+        return self._titulaire
 
     @property
     def solde(self):
-        if self.__solde < 0 :
-            return 0
-        else:
-            return self.__solde
+        return self._solde
+        # if self._solde < 0 :
+        #     return 0
+        # else:
+        #     return self._solde
 
     def deposer(self,somme):
-        self.__solde += somme
-
-    def retirer(self,somme):
-        if somme < self.solde():
-            self.__solde -= somme
-        else:
-            print("solde insuffisant")
+        self._solde += somme
 
 
 class CompteEpargne(Account):
     _taux = 0.02
 
+    def __str__(self):
+        interest = self.solde * self._taux
+        parent_str = super().__str__()
+        # parent_str = Account.__str__()
+        return f"{parent_str}. Intérêt : {interest}."
+
+    def retirer(self,somme):
+        if somme < self.solde:
+            self._solde -= somme
+        else:
+            print("solde insuffisant")
+
+
+class CompteCourant(Account):
+    __frais_transfert = 0.5
+
+    def retirer(self,somme):
+        self._solde -= somme
+        self._solde -= self.__frais_transfert
+
+    def transferer(self, compte, somme ):
+        self.retirer(somme)
+        compte.deposer(somme)
+
+
+# nouveau compte courant en 2025
+# interdit de descendre en dessous de -1000
+class CompteCourant2025(CompteCourant):
+    def retirer(self,somme):
+        if self._solde - somme > -1000:
+            self._solde -= somme
+        else:
+            print("solde insuffisant")
+
 
 if __name__ == "__main__":
-    a = Account("Albert")
-    print(a)
+    cca = CompteCourant("Albert")
+    cca.deposer(500)
+    # print(cca)
+    cca.retirer(1600)
+    print(cca)
 
-    b = CompteEpargne("Bill")
-    print(b)
+    cca2025 = CompteCourant2025("Albert 2025")
+    cca2025.deposer(1)
+    cca2025.retirer(1500)
+    print(cca2025)
 
-    # Account.set_taux(0.05)
-    # a = Account("Albert")
-    # b = Account("Bernard")
-    # print(a)
-    # print(b)
-    # Account.set_taux(0.03)
-    # print(a)
-    # print(b)
-    # # a.set_taux(0.02)
-    # print(a)
-    # print(b)
-    # Account.set_taux(0.04)
-    # print(a)
-    # print(b)
+    cea = CompteEpargne("Albertine")
+    cea.deposer(1000)
+    # print(cea)
+    cea.retirer(400)
+    print(cea)
 
-    # a.solde = 1000
-    # a.__solde = 1000
-    # print(a.solde)
-    # print(a.solde)
-    # print(a.solde())
-    # print(a)
-    # a.deposer(5000)
-    # print(a)
-    # a.retirer(1000)
-    # print(a)
+    cca.transferer( cea, 750 )
+    print(cca)
+    print(cea)
+
+    # cea.transferer( cca, 50 )
+
+
 
