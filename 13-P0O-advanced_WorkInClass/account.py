@@ -63,9 +63,10 @@ class CompteCourant(Account):
 # nouveau compte courant en 2025
 # interdit de descendre en dessous de -1000
 class CompteCourant2025(CompteCourant):
+
     def retirer(self,somme):
         if self._solde - somme > -1000:
-            self._solde -= somme
+            super().retirer(somme)
         else:
             print("solde insuffisant")
 
@@ -74,23 +75,23 @@ if __name__ == "__main__":
     cca = CompteCourant("Albert")
     cca.deposer(500)
     # print(cca)
-    cca.retirer(1600)
+    cca.retirer(100)
     print(cca)
 
     cca2025 = CompteCourant2025("Albert 2025")
-    cca2025.deposer(1)
-    cca2025.retirer(1500)
+    cca2025.deposer(500)
+    cca2025.retirer(100)
     print(cca2025)
 
-    cea = CompteEpargne("Albertine")
-    cea.deposer(1000)
+    # cea = CompteEpargne("Albertine")
+    # cea.deposer(1000)
+    # # print(cea)
+    # cea.retirer(400)
     # print(cea)
-    cea.retirer(400)
-    print(cea)
-
-    cca.transferer( cea, 750 )
-    print(cca)
-    print(cea)
+    #
+    # cca.transferer( cea, 750 )
+    # print(cca)
+    # print(cea)
 
     # cea.transferer( cca, 50 )
 
