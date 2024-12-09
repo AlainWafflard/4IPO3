@@ -1,0 +1,52 @@
+Devoir de Saint-Nicolas
+
+Trois modules vous sont fournis : 
+
+Q35_output.py
+Il contient les classes TextOutput1 et GraphicalOutput1 destinés à afficher une information sous format textuel ou graphique.  C'est le seul module à utiliser pour afficher des informations. 
+
+Q35_point.py
+Il contient les classes Point1 et PointAggregation1 qui gèrent les "points" affichés par le module précédent.  
+
+Q35_jungle.py
+Il contient les trois classes Predator1, Prey1 et Water1 qui représentent un lion, un buffle et une source d'eau dans la jungle. 
+
+Les liaisons entre ces classes, sauf les classes Archaeplastida et Water, sont présentées dans le diagram Q35.drawio, page "start".
+
+Tous ces modules ont été vus en classe et leur fonctionnement est supposé connu.  Toutefois, le code fourni ici est légèrement différent.
+
+
+Consignes générales
+
+* Vous développez une fenêtre graphique Tkinter représentant les quatre acteurs de la jungle et leur mouvement, jusqu'au moment où le lion attrape le buffle.  En d'autres termes, remplacez l'output textuel de Q35_jungle par un output graphique où on voit les animaux se déplacer.
+
+* Pour ce faire, vous suivez le schéma UML fourni en Q35_énoncé.drawio, page "target", et vous développez la solution à partir des trois modules fournis.
+
+* Vous modifiez le module Q35_jungle en fonction des consignes.  En gros, il ne peut plus y avoir de "print" dans ce module. 
+
+* Vous ne modifiez pas les classes fournies dans les modules Q35_point et Q35_output.  Si vous désirez les modifier, alors vous créez des classes enfants, avec un suffixe "2".  Exemple : 
+classe parent "Point1" => classe enfant "Point2" (modifiable)
+
+
+Consignes particulières (par groupe, cf codes)
+
+1. Le lion est représenté par un rectangle jaune, le buffle par un noir, l'eau par un bleu et la plante par un vert.
+
+2. Le lion est représenté par un ovale jaune, le buffle par un noir, l'eau par un bleu et le plante par un vert. 
+
+3. Le lion est représenté par un triangle jaune, le buffle par un noir, l'eau par un bleu et le plante par un vert. 
+
+4. Représentez les acteurs sur une ligne verticale. 
+
+5. Représentez les acteurs sur une ligne horizontale. 
+
+6. Représentez les acteurs sur une ligne oblique (45°). 
+
+7,8,9 : N/A
+
+A. Modifiez les positions initiales des trois acteurs de la jungle en introduisant une position de départ "random" (de -100 à +100) pour chacun d'eux. Vérifiez que l'algorithme fonctionne toujours et corrigez-le au besoin.
+
+B. Introduisez une règle supplémentaire pour le lion : il ne peut courir que pendant un nombre limité d'itérations, par ex. 10. Passé ce délai, il se remet à marcher pour récupérer, pendant un nombre limité d'itérations, par ex. 15.  Une fois qu'il a récupéré, il peut se remettre à courir.  
+
+C. Introduisez une règle supplémentaire pour le buffle : il ne peut courir que pendant un nombre limité d'itérations, par ex. 15. Passé ce délai, il se remet à marcher pour récupérer, pendant un nombre limité d'itérations, par ex. 10.  Une fois qu'il a récupéré, il peut se remettre à courir.  
+
