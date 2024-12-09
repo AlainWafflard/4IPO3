@@ -1,6 +1,6 @@
 <h1>ISFCE, Cours de "Programmation Orientée Objet" (4IPO3)</h1>
 
-<h2>Note sur le projet "magasin de sport"</h2>
+<h2>Note sur le projet "magasin de sport" (Q31)</h2>
 
 <p>
 <a href="https://docs.google.com/document/d/19tC5Gl6xrAL4ETZqtZvEZyf3Yl41oVdl4fLzx1Rtmpg/edit?usp=sharing" target="_blank">
