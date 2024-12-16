@@ -5,23 +5,22 @@ def greet_one():
 	print('Hello One! ', end='')
 
 
-def embedding(fn):
+def my_embedding_function(my_embedded_function):
 	"""
-	embedding() takes a function fn() as an argument.
-	It calls fn() and prints additional things.
-	It extends the functionality fn() without modifying it.
+	my_embedding_function() takes a function my_embedded_function() as an argument.
+	It calls my_embedded_function() and prints additional things.
+	It extends the functionality my_embedded_function() without modifying it.
 	"""
-	print("function embedding ... ", end='')
-	fn()
+	print("function my_embedding_function ... ", end='')
+	my_embedded_function()
 	print('How are you?')
 
 
-def my_decorator(fn):
+def my_decorator(my_function):
 	"""
-	my_decorator(fn) is the decorator for fn().
+	my_decorator(my_function) is the decorator for my_function().
 	The mydecorator function returns an inner function.
 	"""
-
 	def inner_function():
 		"""
 		The inner function inner_function() can access the outer function's argument
@@ -29,11 +28,9 @@ def my_decorator(fn):
 		before calling the argument function.
 		"""
 		print("function decorator ... ", end='')
-		fn()
+		my_function()
 		print('How are you?')
-
 	return inner_function
-
 
 @my_decorator
 def greet_two():
@@ -46,19 +43,20 @@ def greet_three():
 
 
 # MAIN
+if __name__ == "__main__":
 
-# playing with an embedded function
-greet_one()
-print()
-embedding(greet_one)
+	# playing with an embedded function
+	greet_one()
+	print()
+	my_embedding_function(greet_one)
 
-# playing with a decorator
-# The decorator in Python can be defined over any appropriate function
-# using the @decorator_function_name syntax
-# to extend the functionality of the underlying function.
-my_decorator(greet_one) # ceci n'affiche rien
-my_decorator(greet_two) # ceci n'affiche rien
-greet_two()
-greet_three()
+	# playing with a decorator
+	# The decorator in Python can be defined over any appropriate function
+	# using the @decorator_function_name syntax
+	# to extend the functionality of the underlying function.
+	my_decorator(greet_one) # ceci n'affiche rien
+	my_decorator(greet_two) # ceci n'affiche rien
+	greet_two()
+	greet_three()
 
-# Note : @my_decorator can be applied to any function that does not require any argument
+	# Note : @my_decorator can be applied to any function that does not require any argument
