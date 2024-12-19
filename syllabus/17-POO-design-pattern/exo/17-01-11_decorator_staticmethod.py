@@ -13,6 +13,11 @@ class Employee:
 
 	@staticmethod
 	def isAdult(age):
+		"""
+		Cette méthode statique se comporte comme une simple fonction.
+		Elle ne fait aucune référence à la classe où elle se trouve.  Elle pourrait même être déplacée à l'extérieur de la classe.
+		Il n'y a pas d'argument "cls" ou "self" !
+		"""
 		if age > 18:
 			return True
 		else:
@@ -20,6 +25,11 @@ class Employee:
 
 	@classmethod
 	def factory(cls, name, year):
+		"""
+		Cette méthode statique se comporte comme une simple fonction.
+		Toutefois, elle peut faire référence à la classe où elle se trouve.  Elle ne peut pas être déplacée à l'extérieur de la classe.
+		Il y a un argument "cls" qui permet d'utiliser des références de la classe, par ex. cls.__min_age
+		"""
 		current_age = date.today().year - year
 		if cls.isAdult(current_age) and current_age >= cls.__min_age:
 			return cls(name, current_age)

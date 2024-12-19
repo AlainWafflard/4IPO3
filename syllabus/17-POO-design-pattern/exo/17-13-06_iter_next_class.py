@@ -3,20 +3,27 @@
 # working of iterators using an example type
 # that iterates from 10 to given value
 
-# An iterable user defined type
 class CountDown:
-	# Constructor
+	"""
+	An iterable user defined type
+	"""
 	def __init__(self, start):
 		self.__counter = start
 
-	# Creates iterator object
-	# Called when iteration is initialized
 	def __iter__(self):
+		"""
+		Creates iterator object
+		Called when iteration is initialized
+		:return: CountDown generator
+		"""
 		self.__target = 0
 		return self
 
-	# To move to next element.
 	def __next__(self):
+		"""
+		To move to next element.
+		:return: integer
+		"""
 		# decrement
 		self.__counter -= 1
 
@@ -29,16 +36,18 @@ class CountDown:
 
 
 # MAIN
-# initialization du CountDown à 5
-my_iter = iter(CountDown(5))
+if __name__ == '__main__':
 
-while True:
-	try:
-		i = next(my_iter)
-		print(i)
+	# initialization du CountDown à 5
+	my_iter = iter(CountDown(5))
 
-	except StopIteration:
-		# quand i atteint 0 
-		print("Go !")
-		break
+	while True:
+		try:
+			i = next(my_iter)
+			print(i)
+
+		except StopIteration:
+			# quand i atteint 0
+			print("Go !")
+			break
 

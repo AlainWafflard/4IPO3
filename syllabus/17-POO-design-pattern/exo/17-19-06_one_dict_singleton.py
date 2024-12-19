@@ -59,8 +59,11 @@ print("s is t ?", s is t)
 print("s is u ?", s is u)
 print("t is u ?", t is u)
 
-# Try this, it will give an error !
-# "Exception: This class is a singleton!"
-# You must call this class via the singleton static method
-# v = Storage()
+try:
+	# Try this, it will give an error !
+	# "Exception: This class is a singleton!"
+	# You must call this class via the singleton static method
+	v = Storage()
+except Exception as e:
+	print(e)
 
