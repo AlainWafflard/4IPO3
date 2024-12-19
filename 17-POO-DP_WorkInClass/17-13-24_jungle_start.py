@@ -44,6 +44,9 @@ class Fauna:
 		self._speed = +1
 		self._action = ""
 
+	def __iter__(self):
+		return self
+
 	@property
 	def position(self):
 		return self._position
@@ -62,13 +65,14 @@ class Predator(Fauna):
 	_name = "Lion"
 	prey_caught = False
 
-	def go(self):
+	def __next__(self):
 		# différents aspects de la vie du prédateur
 		if abs(self.position - self._food.position) < 1 :
 			# la proie est capturée
 			self.prey_caught = True
 			self._energy += 50
 			self._action = "miam miam"
+			raise StopIteration
 		elif abs(self.position - self._food.position) <= 50:
 			# le prédateur voit sa proie
 			# quand il est à moins de 50m, il accélère
@@ -109,12 +113,13 @@ class Prey(Fauna):
 	def set_predator(self, predator):
 		self.__predator = predator
 
-	def go(self):
+	def __next__(self):
 		# différents aspects de la vie de la proie
 		if abs(self._position - self.__predator.position) <= 1 :
 			# la proie est capturée
 			self.alive = False
 			self._action = "proud to be eaten by my predator "
+			raise StopIteration
 		elif abs(self._position - self.__predator.position) <= 25 :
 			# la proie voit son prédateur
 			# quand celui-ci est à moins de 20m
@@ -157,25 +162,28 @@ class Prey(Fauna):
 
 
 # MAIN
-buffle = Prey(50)
-lion = Predator(110)
-lac = Water(100)
-buisson = Archaeplastida(90)
+if __name__ == "__main__":
+	buffle = iter(Prey(40))
+	lion = iter(Predator(105))
+	lac = Water(100)
+	buisson = Archaeplastida(90)
 
-lion.set_food(buffle)
-lion.set_water(lac)
-buffle.set_predator(lion)
-buffle.set_water(lac)
-buffle.set_food(buisson)
+	lion.set_food(buffle)
+	lion.set_water(lac)
+	buffle.set_predator(lion)
+	buffle.set_water(lac)
+	buffle.set_food(buisson)
 
-while True:
-	time.sleep(0.5)
-	buffle.go()
-	lion.go()
-	if lion.prey_caught or not buffle.alive :
-		print("Bon appétit, cher lion !")
-		break
+	while True:
+		try:
+			time.sleep(0.5)
+			next(buffle)
+			next(lion)
+		except StopIteration:
+			# if lion.prey_caught or not buffle.alive :
+			print("Bon appétit, cher lion !")
+			break
 
-print(lac)
-print(buisson)
+	print(lac)
+	print(buisson)
 
