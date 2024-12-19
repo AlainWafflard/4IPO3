@@ -8,7 +8,7 @@ class Car:
 
     def __str__(self):
         # Peugeot: waiting green light
-        if self.is_running == True:
+        if self.is_running:
             return f"Car {self.name}: moving ... "
         else:
             return f"Car {self.name}: waiting for the green light"

@@ -1,9 +1,11 @@
 import time
+from abc import ABC, abstractmethod
 
 
-class Resource:
+class Resource(ABC):
 	_quantity = 0
 
+	@abstractmethod
 	def __init__(self, pos):
 		self.__position = pos
 
@@ -19,14 +21,14 @@ class Water(Resource):
 	__instance = None
 	_quantity = 1000
 
-	@staticmethod
-	def singleton():
-		if Water.__instance is None:
-			Water.__instance = Water(100)
-		return Water.__instance
+	@classmethod
+	def singleton(cls):
+		if cls.__instance is None:
+			cls.__instance = cls(100)
+		return cls.__instance
 
 	def __init__(self, pos):
-		if Water.__instance is not None:
+		if self.__instance is not None:
 			raise Exception("Water is a singleton!")
 		# Sequel of the constructor
 		super().__init__(pos)
@@ -40,14 +42,14 @@ class Archaeplastida(Resource):
 	__instance = None
 	_quantity = 1000
 
-	@staticmethod
-	def singleton():
-		if Archaeplastida.__instance is None:
-			Archaeplastida.__instance = Archaeplastida(50)
-		return Archaeplastida.__instance
+	@classmethod
+	def singleton(cls):
+		if cls.__instance is None:
+			cls.__instance = cls(50)
+		return cls.__instance
 
 	def __init__(self, pos):
-		if Archaeplastida.__instance is not None:
+		if self.__instance is not None:
 			raise Exception("Archaeplastida is a singleton!")
 		# Sequel of the constructor
 		super().__init__(pos)
@@ -57,7 +59,7 @@ class Archaeplastida(Resource):
 		print(self)
 
 
-class Fauna:
+class Fauna(ABC):
 	__str_base = "{}: {}, pos {}, energy {}"
 	_name = ""
 
@@ -83,10 +85,11 @@ class Fauna:
 
 class Predator(Fauna):
 	_name = "Lion"
-	prey_caught = False
+	__prey_caught = False
 
-	# def __init__(self, pos):
-	# 	super().__init__(pos)
+	@property
+	def prey_caught(self):
+		return self.__prey_caught
 
 	def set_food(self, f):
 		self._food = f
@@ -95,7 +98,7 @@ class Predator(Fauna):
 		# différents aspects de la vie du prédateur
 		if abs(self.position - self._food.position) < 1 :
 			# la proie est capturée
-			self.prey_caught = True
+			self.__prey_caught = True
 			self._energy += 50
 			self._action = "miam miam"
 		elif abs(self.position - self._food.position) <= 50:
@@ -136,7 +139,11 @@ class Predator(Fauna):
 
 class Prey(Fauna):
 	_name = "Buffle"
-	alive = True
+	__alive = True
+
+	@property
+	def alive(self):
+		return self.__alive
 
 	def __init__(self, pos):
 		super().__init__(pos)
@@ -150,7 +157,7 @@ class Prey(Fauna):
 		# différents aspects de la vie de la proie
 		if abs(self._position - self.__predator.position) <= 1 :
 			# la proie est capturée
-			self.alive = False
+			self.__alive = False
 			self._action = "proud to be eaten by my predator "
 		elif abs(self._position - self.__predator.position) <= 25 :
 			# la proie voit son prédateur

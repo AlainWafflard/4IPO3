@@ -1,7 +1,8 @@
 import time
+from abc import ABC, abstractmethod
 
 
-class Resource:
+class Resource(ABC):
 	_quantity = 0
 
 	def __init__(self, pos):
@@ -12,7 +13,7 @@ class Resource:
 		return self.__position
 
 	def __str__(self):
-		return "{}: level {}".format( self.__class__, self._quantity)
+		return f"{self.__class__}: level {self._quantity}"
 
 
 class Water(Resource):
@@ -32,8 +33,8 @@ class Archaeplastida(Resource):
 		print(self)
 
 
-class Fauna:
-	__str_base = "{}: {}, pos {}, energy {}"
+class Fauna(ABC):
+	__str_template = "{}: {}, pos {}, energy {}"
 	_name = ""
 
 	def __init__(self, pos):
@@ -44,7 +45,7 @@ class Fauna:
 		self._speed = +1
 		self._action = ""
 
-	def __iter__(self):
+	def __iter__(self, **kwargs):
 		return self
 
 	@property
@@ -58,18 +59,22 @@ class Fauna:
 		self._water = w
 
 	def __str__(self):
-		return self.__str_base.format(self._name, self._action, self._position, self._energy)
+		return self.__str_template.format(self._name, self._action, self._position, self._energy)
 
 
 class Predator(Fauna):
 	_name = "Lion"
-	prey_caught = False
+	__prey_caught = False
+
+	@property
+	def prey_caught(self):
+		return self.__prey_caught
 
 	def __next__(self):
 		# différents aspects de la vie du prédateur
 		if abs(self.position - self._food.position) < 1 :
 			# la proie est capturée
-			self.prey_caught = True
+			self.__prey_caught = True
 			self._energy += 50
 			self._action = "miam miam"
 		elif abs(self.position - self._food.position) <= 50:
@@ -108,14 +113,15 @@ class Predator(Fauna):
 
 class Prey(Fauna):
 	_name = "Buffle"
-	alive = True
+	__alive = True
+
+	@property
+	def alive(self):
+		return self.__alive
 
 	def __init__(self, pos):
 		super().__init__(pos)
 		self.__predator = None
-
-	def __iter__(self, **kwargs):
-		return self
 
 	def set_predator(self, predator):
 		self.__predator = predator
@@ -124,7 +130,7 @@ class Prey(Fauna):
 		# différents aspects de la vie de la proie
 		if abs(self._position - self.__predator.position) <= 1 :
 			# la proie est capturée
-			self.alive = False
+			self.__alive = False
 			self._action = "proud to be eaten by my predator "
 		elif abs(self._position - self.__predator.position) <= 25 :
 			# la proie voit son prédateur
@@ -171,29 +177,30 @@ class Prey(Fauna):
 
 
 # MAIN
-buffle = Prey(50)
-lion = Predator(110)
-lac = Water(100)
-buisson = Archaeplastida(90)
+if __name__ == "__main__":
 
-buffle.set_water(lac)
-buffle.set_food(buisson)
-buffle.set_predator(lion)
-lion.set_food(buffle)
-lion.set_water(lac)
+	buffle = Prey(50)
+	lion = Predator(110)
+	lac = Water(100)
+	buisson = Archaeplastida(90)
 
+	buffle.set_water(lac)
+	buffle.set_food(buisson)
+	buffle.set_predator(lion)
+	lion.set_food(buffle)
+	lion.set_water(lac)
 
-buffle_it = iter(buffle)
-lion_it = iter(lion)
+	buffle_it = iter(buffle)
+	lion_it = iter(lion)
 
-while True:
-	time.sleep(0.5)
-	next(buffle_it)
-	next(lion_it)
-	if lion.prey_caught or not buffle.alive :
-		print("Bon appétit, cher lion !")
-		break
+	while True:
+		time.sleep(0.5)
+		next(buffle_it)
+		next(lion_it)
+		if lion.prey_caught or not buffle.alive :
+			print("Bon appétit, cher lion !")
+			break
 
-print(lac)
-print(buisson)
+	print(lac)
+	print(buisson)
 
