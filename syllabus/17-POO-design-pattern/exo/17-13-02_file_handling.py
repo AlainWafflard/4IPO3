@@ -46,7 +46,7 @@ action = int(input("""
 
 
 if action == 1:
-	create_file(fn, 1000)
+	create_file(fn, 100000)
 	exit()
 elif action == 2:
 	fct = csv_reader_using_return
@@ -56,7 +56,7 @@ elif action == 2:
 	print("Memory used : {}".format(tracemalloc.get_traced_memory()[1]))
 	tracemalloc.stop()
 
-	fct = csv_reader_using_return
+	fct = csv_reader_using_yield
 	tracemalloc.start()
 	execution_time = timeit.timeit(lambda:loop_on_csv(fct), number=1)
 	print("Execution time is {}".format(execution_time))
