@@ -6,8 +6,9 @@ class Storage(object):
 	def __new__(cls):
 		if cls.__instance is None:
 			# objet créé uniquement s'il n'existe pas
-			cls.__instance = super(Storage, cls).__new__(cls)
-			# cls.__instance = Storage()
+			cls.__instance = super().__new__(cls)
+			# cls.__instance = super(Storage, cls).__new__(cls)
+			# cls.__instance = Storage()  # KO, boucle sans fin
 		return cls.__instance  # objet retourné
 
 	def __init__(self):

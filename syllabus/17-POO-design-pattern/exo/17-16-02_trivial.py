@@ -1,36 +1,30 @@
-class Observer:
-    """ observateur """
-
-    def __init__(self, observable):
-        observable.subscribe(self)
-
-    def notify(
-        self,
-        observable,
-        *args,
-        **kwargs
-        ):
-        print ('Got', args, kwargs, 'From', observable)
-
-
 class Observable:
     """ sujet """
 
     def __init__(self):
-        self.observer_l = []
+        self.__observer_l = []
 
     def subscribe(self, observer):
-        self.observer_l.append(observer)
+        self.__observer_l.append(observer)
 
-    def notify_observer_l(self, *args, **kwargs):
-        for obs in self.observer_l:
-            obs.notify(self, *args, **kwargs)
+    def notify_observer(self, msg):
+        for obs in self.__observer_l:
+            obs.notify(msg)
 
     def unsubscribe(self, observer):
-        self.observer_l.remove(observer)
+        self.__observer_l.remove(observer)
 
 
-# observer_pattern.py
+class Observer:
+    """ observateur """
+
+    def __init__(self, observable, name):
+        self.name = name
+        observable.subscribe(self)
+
+    def notify( self, message ):
+        print (f' {self.name} got this message from Observable : {message}')
+
 
 """
 Demonstrating the Observer pattern implementation
@@ -39,16 +33,14 @@ Demonstrating the Observer pattern implementation
 subject = Observable()
 
 # Initializing two observers with the subject object
-observer1 = Observer(subject)
-observer2 = Observer(subject)
+observerFoo = Observer(subject, "Foo")
+observerBar = Observer(subject, "Bar")
 
 # The following message will be notified to 2 observers
-subject.notifyobserver_l('This is the 1st broadcast',
-                         kw='From the Observer')
-subject.unsubscribe(observer2)
+subject.notify_observer('1st broadcast')
+subject.unsubscribe(observerBar)
 
 # The following message will be notified to just 1 observer since
 # the observer has been unsubscribed
-subject.notifyobserver_l('This is the 2nd broadcast',
-                         kw='From the Observer')
+subject.notify_observer('2nd broadcast')
 
