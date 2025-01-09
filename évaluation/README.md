@@ -16,7 +16,7 @@ Ceci est le lien vers les consignes particulières propres à chaque groupe (gDo
 
 Remarques : 
 <ul>
-<li>Les consignes propres au chapitre 17 (Design Pattern) sont maintenant publiées.</li>
-<li>Les consignes relatives aux trois chapitres 11, 13 et 17 
+<li>Les consignes propres au <strong>chapitre 17</strong> (Design Pattern) sont maintenant publiées.</li>
+<li>Les consignes relatives aux <strong>trois chapitres 11, 13 et 17</strong> 
 sont rassemblées dans les mêmes gDoc mais en tant que chapitres séparés. Allez donc bien voir en fin de document.</li>
 </ul>
