@@ -3,7 +3,7 @@
 <h2>Note sur le projet "magasin de sport" (Q31)</h2>
 
 <p>
-<a href="https://docs.google.com/document/d/19tC5Gl6xrAL4ETZqtZvEZyf3Yl41oVdl4fLzx1Rtmpg/edit?usp=sharing" target="_blank">
+<a href="https://docs.google.com/document/d/14RvysK6YgFtlqI_Vq2IyCixWvjLkhWMZbOaULBg1P2o/edit?usp=sharing" target="_blank">
 Ceci est le lien vers les consignes générales (gDoc) 
 </a>
 </p>
@@ -16,7 +16,7 @@ Ceci est le lien vers les consignes particulières propres à chaque groupe (gDo
 
 Remarques : 
 <ul>
-<li>Les consignes propres au chapitre 13 (POO avancée) sont maintenant publiées.</li>
-<li>Les consignes relatives aux deux chapitres 11 et 13 
+<li>Les consignes propres au chapitre 17 (Design Pattern) sont maintenant publiées.</li>
+<li>Les consignes relatives aux trois chapitres 11, 13 et 17 
 sont rassemblées dans les mêmes gDoc mais en tant que chapitres séparés. Allez donc bien voir en fin de document.</li>
 </ul>
