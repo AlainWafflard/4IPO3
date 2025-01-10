@@ -8,7 +8,7 @@ Partez du fichier ci-joint S1_Q37_jungle.py qui vous donne la structure
 générale du code et la procédure de test.
 
 Vous devez le compléter afin d'atteindre les mêmes spécifications que
-l'exo 17-13-24_jungle.py fait en classe (le corrigé, pas le "start").  En soi,
+l'exo 17-53-24_jungle.py fait en classe (le corrigé, pas le "start").  En soi,
 ce sont des copiés-collés.
 
 MAIS ... En même temps, vous devez le reconcevoir avec le Design Pattern Observer
@@ -24,7 +24,7 @@ Suggestion : Beaucoup de ces évènements influencent la vitesse des animaux.
 Une implantation possible est d'utiliser un "multiplicateur" de vitesse,
 qui vaut 1 par défaut ou 0.5 dans certains cas, 2 dans d'autres cas, etc.
 
-consigne 1
+event 1
 
 - A l'itération 20 : de la pluie tombe
 nom de l'évènement : pluie-start
@@ -38,7 +38,7 @@ nom de l'évènement : pluie-stop
 => le lac ne se remplit plus
 => le buisson ne se regénère plus
 
-consigne 2
+event 2
 
 - A l'itération 20 : le soleil tape dur
 nom de l'évènement : soleil-start
@@ -53,7 +53,7 @@ nom de l'évènement : soleil-stop
 => le lac ne se vide plus
 => le buisson ne dépérit plus
 
-consigne 3
+event 3
 
 - A l'itération 20 : l'orage tombe
 nom de l'évènement : orage-start
@@ -67,7 +67,7 @@ nom de l'évènement : orage-stop
 => le lac ne se remplit plus
 => le buisson ne se regénère plus
 
-consigne 4
+event 4
 
 - Aux itérations 50 et 100 : la nuit tombe
 nom de l'évènement : nuit-start
@@ -77,7 +77,7 @@ nom de l'évènement : nuit-start
 nom de l'évènement : nuit-tombe
 => la vitesse des animaux revient à la normale
 
-consigne 5
+event 5
 
 - Aux itérations 50 et 100 : du Red Bull est dispersé par hélicoptère sur la jungle
 nom de l'évènement : redbull-start
@@ -87,7 +87,7 @@ nom de l'évènement : redbull-start
 nom de l'évènement : redbull-stop
 => les animaux et les plantes voient leur énergie descendre de -50 (min. 0).
 
-consigne 6
+event 6
 
 - Aux itérations 50 et 100 : un bruit de tonnerre est entendu
 nom de l'évènement : tonnerre-fall

@@ -1,5 +1,7 @@
 # Pas d'encapsulation : tous attributs publics
 from abc import ABC, abstractmethod
+from time import sleep
+
 class Light:
     """ OBSERVABLE
         modélisation du feu de signalisation
@@ -106,8 +108,10 @@ if __name__ == '__main__':
     print(velo_C)
 
     for i in range(6):
+        sleep(3)
         feu01.change()
         print(feu01)
         print(voiture_A)
         print(voiture_B)
         print(velo_C)
+
