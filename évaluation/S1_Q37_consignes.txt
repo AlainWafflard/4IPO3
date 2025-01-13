@@ -7,8 +7,8 @@ Consignes générales
 Partez du fichier ci-joint S1_Q37_jungle.py qui vous donne la structure
 générale du code et la procédure de test.
 
-Vous devez le compléter afin d'atteindre les mêmes spécifications que
-l'exo 17-13-24_jungle.py fait en classe (le corrigé, pas le "start").  En soi,
+Vous devez le compléter en vous inspirant des spécifications des exos
+"17-13-24_jungle_start.py" ou "17-13-24_jungle.py" (faits en classe).  En soi,
 ce sont des copiés-collés.
 
 MAIS ... En même temps, vous devez le reconcevoir avec le Design Pattern Observer
