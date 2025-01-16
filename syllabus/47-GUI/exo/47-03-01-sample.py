@@ -8,7 +8,7 @@ window = Tk()
 # https://www.w3schools.com/colors/colors_names.asp
 mycolor1 = '#{:02x}{:02x}{:02x}'.format(255, 0, 255)
 print(mycolor1)
-mycolor2 = '#FF00FF'
+mycolor2 = '#00FFFF'
 mycolor3 = 'Magenta'
 window.configure(bg=mycolor2)
 
@@ -26,18 +26,18 @@ t.pack()
 # - reproduire le contenu de e dans t
 # - effacer le contenu de e 
 def b_callback():
-    print(e.get())
-    t.insert(END, e.get() + "\n")
+    user_str = e.get()
+    print(user_str)
+    t.insert(END, user_str + "\n")
     e.delete(0, END)
 
 
 # créer un bouton 
-# b = Button(window, text="get", width=10, command=callback)
-b = Button(window, text="get", width=10, command=b_callback)
+b = Button(window, text="get", command=b_callback )
 b.pack()
 
-# obligatoire : faire tourner une fonction qui permet au programme de
-# rester à l'écoute des événéments.
+# obligatoire : faire tourner une méthode qui permet au programme de
+# rester à l'écoute des événements.
 # sans cette fonction, le programme se termine et le GUI est mort.
 window.mainloop()
 
