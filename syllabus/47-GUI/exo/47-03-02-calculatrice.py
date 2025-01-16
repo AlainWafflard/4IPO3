@@ -12,6 +12,9 @@ def b2_callback():
 def b3_callback():
     line.insert(END, "3" )
 
+def b4_callback():
+    line.insert(END, "4")
+
 def bplus_callback():
     line.insert(END, "+" )
 
@@ -53,6 +56,9 @@ b2.pack(side=LEFT)
 b3 = Button(w, text="3", width=2, command=b3_callback )
 b3.pack(side=LEFT)
 
+b4 = Button(w, text="4", width=2, command=b4_callback)
+b4.pack(side=LEFT)
+
 bc = Button(w, text="C", width=2, command=bc_callback )
 bc.pack(side=RIGHT)
 
@@ -62,4 +68,4 @@ bequal.pack(side=RIGHT)
 bplus = Button(w, text="+", width=2, command=bplus_callback )
 bplus.pack(side=RIGHT)
 
-# w.mainloop()
+w.mainloop()

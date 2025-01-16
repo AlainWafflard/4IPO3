@@ -34,6 +34,7 @@ def reset_cb():
     game_select_cb.current(2)
     launch_quizz_cb()
 
+
 game_select_cb = ttk.Combobox( window,
                                font=FONT,
                                values=["Belgique","Météo","Les chats"])
@@ -56,8 +57,8 @@ game_select_cb.pack()
 # affichage des évènements 
 Label(window, text= "journal des évènements", font=FONT, bg=BG, fg=FG).pack(pady=(40,0))
 output_s = StringVar()
-output = Label(window, textvariable=output_s, font= FONT, bg="white", fg="grey", width=15)
-output.pack()
+output_lbl = Label(window, textvariable=output_s, font= FONT, bg="white", fg="grey", width=15)
+output_lbl.pack()
 
 b_reset = Button( window, text="Réinitialiser", font=FONT, command=reset_cb )
 b_reset.pack(pady=(40,0))

@@ -8,7 +8,7 @@ def animate(ind=0):
     frame = frame2[ind]
     ind += 1
     img2.configure(image=frame)
-    root.after(500, display, ind)
+    root.after(500, animate, ind)
 
 # Loop through the index of the animated gif
 nb_frame = 11
@@ -18,7 +18,7 @@ img2 = Label(root)
 img2.pack()
 
 # root.after(0, update, 0)
-display(0)
+animate(0)
 
 button1 = Button(root,text = 'Animate', command=animate)
 button1.pack()
