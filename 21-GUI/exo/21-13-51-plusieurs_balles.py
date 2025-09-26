@@ -15,7 +15,7 @@ class Environment :
         # On ajoute la photo en haut à gauche
         # Obligatoire de mettre "l = Logo(...)" sinon l'objet est effacé et
         # la photo n'est pas affichée.
-        self.logo = Logo( window=self.mainw, filename="programmation.gif" )
+        self.logo = Logo(window=self.mainw, filename="programmation.gif")
 
         # création du canevas 
         self.canevas = Canvas( self.mainw, bg='dark grey', height=300, width=300 )

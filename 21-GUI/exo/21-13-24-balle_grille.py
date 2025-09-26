@@ -52,7 +52,7 @@ Button(fen1,text='Quitter',command=fen1.destroy).grid( row=2, column=2 )
 
 # On ajoute la photo en haut à gauche
 can2 = Canvas( fen1, width=30, height=30, bg='white' )
-photo = PhotoImage( file='programmation.gif' )
+photo = PhotoImage(file='programmation.gif')
 item = can2.create_image( 15, 15, image=photo )
 can2.grid( row=0, column=0, sticky=W )
 

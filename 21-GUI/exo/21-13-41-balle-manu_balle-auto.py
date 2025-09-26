@@ -81,7 +81,7 @@ fen1.title("Exercice d'animation avec Tkinter")
 # On ajoute la photo en haut à gauche
 # Obligatoire de mettre "l = Logo(...)" sinon l'objet est effacé et
 # la photo n'est pas affichée.
-l = Logo( window=fen1, filename="programmation.gif" )
+l = Logo(window=fen1, filename="programmation.gif")
 
 # création du canevas 
 can = Canvas( fen1, bg='dark grey', height=300, width=300 )
