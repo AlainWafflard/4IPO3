@@ -20,20 +20,23 @@ class NokiaPhone:
 if __name__ == "__main__" :
     nokia_kim = NokiaPhone(  "170", 100 )
     print(nokia_kim)
+    s = str(nokia_kim)
+    print(s)
+
     # print("poids = ", nokia_kim.poids)
 
-    nokia_jim = NokiaPhone(  "180", 150 )
-    print(nokia_jim)
-
-    nokia_charles = NokiaPhone(  "170", 100 )
-    print(nokia_charles)
-
-    print( nokia_kim == nokia_jim )
-    print( nokia_kim == nokia_charles )
-
-    nokia_siegfried = nokia_kim
-    print(nokia_siegfried)
-
-    for o in [ nokia_kim, nokia_jim, nokia_charles ]:
-        print(repr(o))
-
+    # nokia_jim = NokiaPhone(  "180", 150 )
+    # print(nokia_jim)
+    #
+    # nokia_charles = NokiaPhone(  "170", 100 )
+    # print(nokia_charles)
+    #
+    # print( nokia_kim == nokia_jim )
+    # print( nokia_kim == nokia_charles )
+    #
+    # nokia_siegfried = nokia_kim
+    # print(nokia_siegfried)
+    #
+    # for o in [ nokia_kim, nokia_jim, nokia_charles ]:
+    #     print(repr(o))
+    #
