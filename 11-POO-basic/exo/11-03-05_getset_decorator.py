@@ -4,7 +4,7 @@ class Thermometre :
 	"""
 
 	def __init__(self):
-		self.__value_celsius = 0
+		self.value_celsius = 0
 
 	@property
 	def value_celsius(self):
