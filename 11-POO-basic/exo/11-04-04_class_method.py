@@ -6,6 +6,7 @@ class Compte:
 
 	def __init__(self, owner):
 		self.owner = owner
+		self.taux_interet = Compte.taux_interet()
 
 	@classmethod
 	def taux_interet(cls):
@@ -23,29 +24,30 @@ print()
 
 print("valeurs au niveau de l'objet")
 kim_c = Compte("Kim")
-print("taux de Kim", kim_c.taux_interet())
+print("taux de Kim", kim_c.taux_interet)
 hilde_c = Compte("Hilde")
-print("taux de Hilde", hilde_c.taux_interet())
+print("taux de Hilde", hilde_c.taux_interet)
 print()
 
 print("modification au niveau de la classe")
 Compte.set_taux_interet(0.04)
 print("taux général", Compte.taux_interet())
-print("taux de Kim", kim_c.taux_interet())
-print("taux de Hilde", hilde_c.taux_interet())
+print("taux de Kim", kim_c.taux_interet)
+print("taux de Hilde", hilde_c.taux_interet)
 print()
+
 
 print("modification au niveau de l'objet - don't do that")
 kim_c.set_taux_interet(0.06)
 print("taux général", Compte.taux_interet())
-print("taux de Kim", kim_c.taux_interet())
-print("taux de Hilde", hilde_c.taux_interet())
+print("taux de Kim", kim_c.taux_interet)
+print("taux de Hilde", hilde_c.taux_interet)
 print()
 
 print("remodification au niveau de la classe")
 Compte.set_taux_interet(0.08)
 print("taux général", Compte.taux_interet())
-print("taux de Kim", kim_c.taux_interet())
-print("taux de Hilde", hilde_c.taux_interet())
+print("taux de Kim", kim_c.taux_interet)
+print("taux de Hilde", hilde_c.taux_interet)
 print()
 
