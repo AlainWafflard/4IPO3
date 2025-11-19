@@ -5,8 +5,9 @@ class Course:
         self.stud_d = {}
 
     def __str__(self):
-        out = f"       cours: {self.name}"
-        # for course in self.course_d.values():
-        #     out += str(course) + "\n"
+        out = f"       cours: {self.name} : "
+        out += ", ".join(self.stud_d.keys())
         return out
 
+    def subscribe_student(self, stud_ref):
+        self.stud_d[stud_ref.name] = stud_ref
