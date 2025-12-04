@@ -1,6 +1,6 @@
 # Python program showing how
 # abstract base class work
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod, abstractproperty
 
 
 class Polygon(ABC):
@@ -36,6 +36,15 @@ class Pentagon(Polygon):
 		print(self.name + " : I have 5 sides")
 
 
+class Quadrilatere(Polygon):
+
+	def name(self):
+		return "quadri..."
+
+	def number_of_sides(self):
+		print("j'ai 4 côtés")
+
+
 # Driver code
 try:
 	R = Triangle()
@@ -44,8 +53,11 @@ try:
 	R = Pentagon()
 	R.number_of_sides()
 
-	P = Polygon()
-	P.number_of_sides()  # error, why ?
+	Q = Quadrilatere()
+	Q.number_of_sides()
+
+	# P = Polygon()
+	# P.number_of_sides()  # error, why ?
 
 except Exception as err:
 	print("ERROR : " + str(err))

@@ -11,6 +11,9 @@ class CompteCourant(CompteRenaissance):
 		super().__init__(owner)
 		# reste du code du constructeur ...
 
+	def deposer(self, somme):
+		super().deposer(somme)
+
 	def retirer(self, somme):
 		if not self.__check_balance(somme):
 			# cas alternatif
@@ -34,22 +37,6 @@ class CompteCourant(CompteRenaissance):
 	def __check_balance(self, somme):
 		return self.balance - somme > self.__limite_retrait
 
-
-if __name__ == ("__main__"):
-	# MAIN
-	kim_c = CompteCourant("Kim")
-	kim_c.deposer(1000)
-	print(kim_c)
-
-	clijster_c = CompteCourant("Clijster")
-	print(clijster_c)
-
-	kim_c.transferer(clijster_c, 500)
-	kim_c.retirer(200)
-	kim_c.transferer(clijster_c, 800)
-	kim_c.transferer(clijster_c, 1000)
-	clijster_c.retirer(2500)
-	clijster_c.transferer(kim_c, 50)
-
-	print(kim_c)
-	print(clijster_c)
+#
+# if __name__ == ("__main__"):
+# 	# MAIN
