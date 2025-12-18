@@ -42,6 +42,7 @@ u.append( "bday", "2000/01/01")
 
 print("s:", s)
 print("t:", t)
+print("u:", u)
 print("s == t ?", s == t)
 print("s is t ?", s is t)
 

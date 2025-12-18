@@ -9,6 +9,7 @@ class CountDown:
 	"""
 	def __init__(self, start):
 		self.__counter = start
+		# self.__target = 0
 
 	def __iter__(self):
 		"""
@@ -40,6 +41,11 @@ if __name__ == '__main__':
 
 	# initialization du CountDown à 5
 	my_iter = iter(CountDown(5))
+	# c = CountDown(5)
+	# print(c)
+	# my_iter = iter(c)
+	# my_iter = CountDown(5)
+	# print(my_iter)
 
 	while True:
 		try:

@@ -23,6 +23,9 @@ class Employee:
 		else:
 			return False
 
+	# def factory(self):
+	# 	pass
+
 	@classmethod
 	def factory(cls, name, year):
 		"""
@@ -33,6 +36,8 @@ class Employee:
 		current_age = date.today().year - year
 		if cls.isAdult(current_age) and current_age >= cls.__min_age:
 			return cls(name, current_age)
+		else:
+			return None
 
 	@classmethod
 	def set_age_to_work(cls, new_age):
@@ -51,7 +56,7 @@ if __name__ == '__main__':
 	f = Employee('Fatima', 16)
 	print(f)
 
-	g = Employee.factory( "Gaga", 2010)
+	g = Employee.factory( "Gaga", 2020)
 	print(g)
 
 	h = Employee.factory("Harry", 1999)

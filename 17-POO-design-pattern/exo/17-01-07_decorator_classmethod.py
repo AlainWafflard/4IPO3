@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # idem mais via un objet
     std = Student()
     std.tostring()
-    std.tostring_with_error()
+    # std.tostring_with_error()
 
     # on appelle la méthode de classe => error
     # AttributeError: type object 'Student' has no attribute 'age'

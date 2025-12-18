@@ -8,6 +8,7 @@ class A():
 
 
 class B():
+
 	def __init__(self):
 		print("In B __init__")
 

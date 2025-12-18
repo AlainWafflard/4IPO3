@@ -10,12 +10,12 @@ class Translator:
 	@classmethod
 	def factory(cls, language="English"):
 		"""Factory Method"""
-		translator_l = {
-			"French":  FrenchTranslator,
+		translator_d = {
+			"French": FrenchTranslator,
 			"English": EnglishTranslator,
 			"Spanish": SpanishTranslator,
 		}
-		return translator_l[language]()
+		return translator_d[language]()
 
 	def localize(self, msg):
 		"""change the message using translations"""
@@ -48,7 +48,7 @@ if __name__ == "__main__":
 	e = Translator.factory("English")
 	s = Translator.factory("Spanish")
 
-	message = ["car", "bike", "scooter"]
+	message = ["car", "bike", "scooter", "foot"]
 
 	for msg in message:
 		print(f.localize(msg))
