@@ -18,7 +18,7 @@ e.pack()  # affichage
 e.focus_set()  # mettre le curseur de la souris dans cet entry
 
 # créer une zone pour afficher du texte 
-t = Text(window, height=2, width=20)
+t = Text(window, height=5, width=20)
 t.pack()
 
 
