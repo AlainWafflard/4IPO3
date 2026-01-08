@@ -10,7 +10,7 @@ from tkinter import *
 # Noter "evt" comme paramètre 
 def lb_onselect(evt, sel):
     # Note here that Tkinter passes an event object to onselect()
-    global label_selection
+    # global label_selection/
     w = evt.widget
     index = int(w.curselection()[0]) #  nous avons l'index
                                      # car la sélection est une liste

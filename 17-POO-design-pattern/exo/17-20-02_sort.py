@@ -4,19 +4,19 @@ from abc import ABC, abstractmethod
 class SortStrategy(ABC):
     @classmethod
     @abstractmethod
-    def trier(self, data):
+    def trier(cls, data):
         pass
 
 
 class TriAlphaDirect(SortStrategy):
     @classmethod
-    def trier(self, data):
+    def trier(cls, data):
         return sorted(data)
 
 
 class TriAlphaInverse(SortStrategy):
     @classmethod
-    def trier(self, data):
+    def trier(cls, data):
         return sorted(data, reverse=True)
 
 
