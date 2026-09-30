@@ -46,6 +46,6 @@ window = turtle.Screen()
 # https://stackoverflow.com/questions/29158220/tkinter-understanding-mainloop
 window.update()
 
-run_koch(order=3, size=500)
+run_koch(order=3)
 
 input("press 'return' to exit")
