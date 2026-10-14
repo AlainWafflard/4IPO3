@@ -6,7 +6,7 @@ from Q61_calc import Calculator
 
 # indiquez le nom de votre groupe en argument, par ex. "Héritiers" ou "Pascal Case"
 # cal = Calculator("<nom_groupe>")
-cal = Calculator("VeryImportantPython")
+cal = Calculator("")
 
 p = cal.plus(4, 3)
 print("4+3=", p) # 7
