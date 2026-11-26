@@ -1,4 +1,5 @@
 from higherschool import HigherSchool
+from people import People
 
 if __name__ == "__main__":
 
@@ -19,23 +20,35 @@ if __name__ == "__main__":
     # ▪ Database
     hs.add_course_to_bachelor( "BIG", "Database" )
 
+    # bachelier BII
+    hs.add_bachelor("BII")
+    hs.add_course_to_bachelor("BII", "Réseaux")
+    hs.add_course_to_bachelor("BII", "Connectique")
+
+    # print(hs)
+    # exit()
+
     # ▪ Créer deux étudiants : Rudy et Ali.
     people = People()
-    people.reg_student( "Rudy" )
-    people.reg_student( "Ali" )
-    people.connect(hs)
+    people.register_student( "Rudy" )
+    people.register_student( "Ali" )
+    people.setHigherSchool(hs)
 
     # ▪ Créer l'inscription de chaque étudiant à deux cours.
     # ▪ Rudy : algorithmique, database
-    people.reg_student_to_course( "Rudy", "BIG", "Algorithmique")
-    people.reg_student_to_course( "Rudy", "BIG", "Database")
+    people.register_student_to_course( "Rudy", "BIG", "Algorithmique")
+    people.register_student_to_course( "Rudy", "BIG", "Database")
+    people.register_student_to_course( "Bernard", "BIG", "Database")
 
     # ▪ Ali : database, statistiques
-    people.reg_student_to_course( "Ali", "BIG", "Database")
-    people.reg_student_to_course( "Ali", "BIG", "Statistiques")
+    people.register_student_to_course( "Ali", "BIG", "Database")
+    people.register_student_to_course( "Ali", "BIG", "Statistiques")
+    people.register_student_to_course( "Ali", "BII", "Connectique")
+    people.register_student_to_course( "Ali", "BII", "Réseaux")
 
     # ▪ Imprimer l'état des inscriptions dans les bacheliers
     print(hs)
+    print(repr(hs))
 
     # BIG
     # ▪ par cours
